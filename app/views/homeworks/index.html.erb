@@ -4,11 +4,10 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Description</th>
       <th>Duration</th>
       <th>Startdate</th>
       <th>Enddate</th>
-      <th>Team</th>
+      <th>Member</th>
       <th>Finished</th>
       <th colspan="3"></th>
     </tr>
@@ -18,7 +17,6 @@
     <% @homeworks.each do |homework| %>
       <tr>
         <td><%= homework.title %></td>
-        <td><%= homework.description %></td>
         <td><%= homework.duration %></td>
         <td><%= homework.startdate %></td>
         <td><%= homework.enddate %></td>

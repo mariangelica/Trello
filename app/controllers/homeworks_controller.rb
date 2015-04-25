@@ -1,10 +1,10 @@
 class HomeworksController < ApplicationController
   before_action :set_homework, only: [:show, :edit, :update, :destroy]
-
+before_action :get_teams, only: [:new, :create, :edit, :update]
   # GET /homeworks
   # GET /homeworks.json
   def index
-    @homeworks = Homework.all
+    @homeworks = Homework.order('enddate DESC')
   end
 
   # GET /homeworks/1
@@ -68,6 +68,11 @@ class HomeworksController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    
+    def get_teams
+      @member = Team.all.map {|team| [team.name, team.id]}
+    end
+    
     def homework_params
       params.require(:homework).permit(:title, :description, :duration, :startdate, :enddate, :team_id, :finished)
     end

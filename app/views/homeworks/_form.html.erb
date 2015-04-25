@@ -32,8 +32,9 @@
     <%= f.datetime_select :enddate %>
   </div>
   <div class="field">
-    <%= f.label :team_id %><br>
-    <%= f.number_field :team_id %>
+    <%= f.label :member %><br>
+    <%= f.select :team_id, options_for_select(@member) %>
+
   </div>
   <div class="field">
     <%= f.label :finished %><br>
