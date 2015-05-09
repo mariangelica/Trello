@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :teams
   resources :homeworks
 
   resources :teams
