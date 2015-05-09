@@ -33,7 +33,8 @@
   </div>
   <div class="field">
     <%= f.label :member %><br>
-    <%= f.select :team_id, options_for_select(@member) %>
+    <% @c= current_team.name %>
+    <%= f.hidden_field :team_id, :value => @c %>
 
   </div>
   <div class="field">

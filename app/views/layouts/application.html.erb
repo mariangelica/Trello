@@ -30,6 +30,16 @@
   
   
   <section class="top-bar-section">
+    
+        <!-- Left Nav Section -->
+    <ul class="left">
+      <li>
+      <%= link_to 'Teams', teams_path %></li>
+      <li><%= link_to 'Homeworks', homeworks_path %>
+      </li>
+    </ul>
+    
+    
         <!-- Right Nav Section -->
         <ul class="right">
           <% if team_signed_in? %>
@@ -39,6 +49,14 @@
           <li>
             <%= link_to 'Sign Out', destroy_team_session_path, method: :delete %>
           </li>
+          
+          
+          
+        
+  </section>
+          
+          
+          
           <% else %>
           <li class="active">
             <%= link_to 'Sign Up', new_team_registration_path %>
@@ -53,26 +71,7 @@
 
       </section>
   
-  
-  
-  
-  
-  
-  
-  
 
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-
-
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <li>
-      <%= link_to 'Teams', teams_path %></li>
-      <li><%= link_to 'Homeworks', homeworks_path %>
-      </li>
-    </ul>
-  </section>
 </nav>
 
     

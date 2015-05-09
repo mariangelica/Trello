@@ -1,6 +1,7 @@
 class HomeworksController < ApplicationController
   before_action :set_homework, only: [:show, :edit, :update, :destroy]
 before_action :get_teams, only: [:new, :create, :edit, :update]
+  before_action :authenticate_team!, only: [:new, :create, :edit, :update, :destroy]
   # GET /homeworks
   # GET /homeworks.json
   def index
