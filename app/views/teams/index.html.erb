@@ -1,11 +1,11 @@
-<h1>Listing teams</h1>
+<h1><%= t('Listing teams') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Lastname</th>
-      <th>Email</th>
+      <th><%= t('Name') %></th>
+      <th><%= t('Lastname') %></th>
+      <th><%= t('Email') %></th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -16,8 +16,8 @@
         <td><%= team.name %></td>
         <td><%= team.lastname %></td>
         <td><%= team.email %></td>
-        <td><%= link_to 'Show', team %></td>
-        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to t('Show'), team %></td>
+        <td><%= link_to t('Destroy'), team, method: :delete, data: { confirm: t('Are you sure?') } %></td>
       </tr>
     <% end %>
   </tbody>
