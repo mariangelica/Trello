@@ -1,4 +1,4 @@
-<%= form_for(@homework) do |f| %>
+<%= form_for(@homework, multipart: true) do |f| %>
   <% if @homework.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@homework.errors.count, "error") %> prohibited this homework from being saved:</h2>
@@ -31,12 +31,7 @@
     <%= f.label :enddate %><br>
     <%= f.datetime_select :enddate %>
   </div>
-  <div class="field">
-    <%= f.label :member %><br>
-    <% @c= current_team.name %>
-    <%= f.hidden_field :team_id, :value => @c %>
 
-  </div>
   <div class="field">
     <%= f.label :finished %><br>
     <%= f.check_box :finished %>

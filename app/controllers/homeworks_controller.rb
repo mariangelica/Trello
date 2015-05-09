@@ -5,7 +5,7 @@ before_action :get_teams, only: [:new, :create, :edit, :update]
   # GET /homeworks
   # GET /homeworks.json
   def index
-    @homeworks = Homework.order('enddate DESC')
+    @homeworks = Homework.order('finished ASC').order('enddate ASC')
   end
 
   # GET /homeworks/1
@@ -26,6 +26,9 @@ before_action :get_teams, only: [:new, :create, :edit, :update]
   # POST /homeworks.json
   def create
     @homework = Homework.new(homework_params)
+    
+    @homework = Homework.new(homework_params)
+    @homework.team_id = current_team.id
 
     respond_to do |format|
       if @homework.save
